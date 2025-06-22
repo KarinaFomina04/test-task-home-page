@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 0; /* чтобы ::before мог быть позади */
+  overflow: hidden; /* чтобы фон не вылезал */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.78%, #000000 100%), url('/images/background.jpg') center/cover no-repeat;
+  opacity: 0.5; /* прозрачность только фона */
+  z-index: -1;
+  pointer-events: none; /* не мешает кликам по содержимому */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 40px;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    span {
+      display: block;
+      margin-top: -5px;
+      font-size: 1rem;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+  }
+
+  .contact-btn {
+    background: #00ff88;
+    color: black;
+    padding: 16px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.hero-content {
+
+  padding: 0 155px;
+
+  /* FR/White */
+  color: #FFFFFF;
+
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+
+  h1 {
+    font-family: 'Inter Display', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 88px;
+    line-height: 94%;
+    letter-spacing: -0.02em;
+
+    .highlight {
+      color: #00ff88;
+    }
+  }
+}
+
+.footer {
+  padding: 39px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 0.9rem;
+
+  .clutch-rating {
+    flex: 1;
+    p {
+      margin: 0;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .stars {
+      display: flex;
+      gap: 1px;
+      color: #00ff88;
+    }
+  }
+
+  .footer-text {
+    font-size: 1rem;
+    text-align: left;
+    max-width: 400px;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      background: none;
+      border: 1px solid white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}

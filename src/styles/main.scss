@@ -1,0 +1,11 @@
+@use 'components/hero';
+@use 'components/features';
+@use 'components/works';
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background: black;
+}

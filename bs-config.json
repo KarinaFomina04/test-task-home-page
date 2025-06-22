@@ -1,0 +1,12 @@
+{
+  "server": {
+    "baseDir": ["public", "dist"]
+  },
+  "files": [
+    "dist/**/*.*",
+    "public/**/*.*"
+  ],
+  "watchOptions": {
+    "ignored": ["node_modules"]
+  }
+}

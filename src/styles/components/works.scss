@@ -1,0 +1,103 @@
+.works {
+    height: 100vh;
+
+    .container {
+        padding: 40px 34px;
+
+        .title {
+            font-family: 'Inter Display', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 96px;
+            line-height: 100%;
+            padding: 64px 0;
+        }
+
+        .works-grid {
+            display: flex;
+            flex-direction: column;
+
+            .item {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 2px solid #222; // Замените #222 на нужный цвет
+
+                .item-description {
+                    .categories {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                    }
+                    .category {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+                    .category-title {
+                        font-family: 'Inter Display', sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 120%;
+                        color: #727272;
+                    }
+
+                    .skill {
+                        font-family: 'Inter Display', sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 120%;
+                    }
+
+                    > :not(.subtitle) {
+                        opacity: 0;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: opacity 0.6s, max-height 0.6s;
+                        display: flex; // Чтобы transition работал
+                    }
+
+                    .subtitle {
+                        display: block;
+                        border: 0;
+                        font-family: 'Inter Display', sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 48px;
+                        line-height: 100%;
+                        color: #2C2C2C;
+                        &:hover {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+
+                &:hover .item-description> :not(.subtitle) {
+                    opacity: 1;
+                    max-height: 500px; // Достаточно большое значение
+                    transition: opacity 0.6s, max-height 0.6s;
+                    padding-top: 84px;
+                }
+
+                img {
+                    width: 65%;
+                    border-radius: 24px;
+                    max-height: 56px;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: object-fit 2s, object-position 2s, max-height 2s;
+                }
+
+                &:hover img {
+                    max-height: 1000px;
+                    object-fit: contain;
+                    object-position: initial;
+                }
+
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }
+        }
+    }
+}

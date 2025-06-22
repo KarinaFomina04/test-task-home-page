@@ -1,0 +1,63 @@
+.features {
+    height: 130vh;
+
+    .container {
+        height: 105vh;
+
+        .cards {
+            padding: 0 296px;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 31px;
+            position: sticky;
+            top: 31px;
+            z-index: 1;
+
+            .card {
+                background: #000;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+                padding: 36px 60px 40px 60px;
+                border: 1px solid #2C2C2C;
+                border-radius: 24px;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 110%;
+
+            }
+
+            .tail {
+                width: 1px;
+                background: #2C2C2C;
+                margin: auto;
+            }
+
+            .tail-1 {
+                height: 141px;
+            }
+
+            .tail-2 {
+                height: 205px;
+            }
+
+            .tail-3 {
+                height: 269px;
+            }
+        }
+
+        .title {
+            padding: 64px 0;
+            font-family: 'Inter Display', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 120px;
+            line-height: 100%;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+    }
+
+}

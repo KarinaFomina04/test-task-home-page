@@ -1,0 +1,273 @@
+@charset "UTF-8";
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 0; /* чтобы ::before мог быть позади */
+  overflow: hidden; /* чтобы фон не вылезал */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.78%, #000000 100%), url("/images/background.jpg") center/cover no-repeat;
+  opacity: 0.5; /* прозрачность только фона */
+  z-index: -1;
+  pointer-events: none; /* не мешает кликам по содержимому */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 40px;
+}
+.header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.header .logo span {
+  display: block;
+  margin-top: -5px;
+  font-size: 1rem;
+}
+.header .nav {
+  display: flex;
+  gap: 1.5rem;
+}
+.header .nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.header .contact-btn {
+  background: #00ff88;
+  color: black;
+  padding: 16px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-content {
+  padding: 0 155px;
+  /* FR/White */
+  color: #FFFFFF;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.hero-content h1 {
+  font-family: "Inter Display", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 88px;
+  line-height: 94%;
+  letter-spacing: -0.02em;
+}
+.hero-content h1 .highlight {
+  color: #00ff88;
+}
+
+.footer {
+  padding: 39px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 0.9rem;
+}
+.footer .clutch-rating {
+  flex: 1;
+}
+.footer .clutch-rating p {
+  margin: 0;
+}
+.footer .clutch-rating .rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.footer .clutch-rating .stars {
+  display: flex;
+  gap: 1px;
+  color: #00ff88;
+}
+.footer .footer-text {
+  font-size: 1rem;
+  text-align: left;
+  max-width: 400px;
+}
+.footer .footer-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+.footer .footer-icons button {
+  background: none;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+}
+
+.features {
+  height: 130vh;
+}
+.features .container {
+  height: 105vh;
+}
+.features .container .cards {
+  padding: 0 296px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 31px;
+  position: sticky;
+  top: 31px;
+  z-index: 1;
+}
+.features .container .cards .card {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+  padding: 36px 60px 40px 60px;
+  border: 1px solid #2C2C2C;
+  border-radius: 24px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 110%;
+}
+.features .container .cards .tail {
+  width: 1px;
+  background: #2C2C2C;
+  margin: auto;
+}
+.features .container .cards .tail-1 {
+  height: 141px;
+}
+.features .container .cards .tail-2 {
+  height: 205px;
+}
+.features .container .cards .tail-3 {
+  height: 269px;
+}
+.features .container .title {
+  padding: 64px 0;
+  font-family: "Inter Display", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 100%;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.works {
+  height: 100vh;
+}
+.works .container {
+  padding: 40px 34px;
+}
+.works .container .title {
+  font-family: "Inter Display", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 100%;
+  padding: 64px 0;
+}
+.works .container .works-grid {
+  display: flex;
+  flex-direction: column;
+}
+.works .container .works-grid .item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #222;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.works .container .works-grid .item .item-description .categories {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.works .container .works-grid .item .item-description .category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.works .container .works-grid .item .item-description .category-title {
+  font-family: "Inter Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #727272;
+}
+.works .container .works-grid .item .item-description .skill {
+  font-family: "Inter Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+}
+.works .container .works-grid .item .item-description > :not(.subtitle) {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.6s, max-height 0.6s;
+  display: flex;
+}
+.works .container .works-grid .item .item-description .subtitle {
+  display: block;
+  border: 0;
+  font-family: "Inter Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  color: #2C2C2C;
+}
+.works .container .works-grid .item .item-description .subtitle:hover {
+  color: #FFFFFF;
+}
+.works .container .works-grid .item:hover .item-description > :not(.subtitle) {
+  opacity: 1;
+  max-height: 500px;
+  transition: opacity 0.6s, max-height 0.6s;
+  padding-top: 84px;
+  color: #FFFFFF;
+}
+.works .container .works-grid .item img {
+  width: 65%;
+  border-radius: 24px;
+  max-height: 56px;
+  object-fit: cover;
+  object-position: center;
+  transition: object-fit 2s, object-position 2s, max-height 2s;
+}
+.works .container .works-grid .item:hover img {
+  max-height: 1000px;
+  object-fit: contain;
+  object-position: initial;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: white;
+  background: black;
+}
+
+/*# sourceMappingURL=style.css.map */
