@@ -1,29 +1,29 @@
 .features {
-    height: 130vh;
+    height: 160vh;
 
     .container {
-        height: 105vh;
+        height: 155vh;
 
         .cards {
-            padding: 0 296px;
+            padding: 0 18.5rem;
             display: flex;
             justify-content: space-evenly;
-            margin-top: 31px;
+            margin-top: 1.938rem;
             position: sticky;
-            top: 31px;
+            top: 1.938rem;
             z-index: 1;
 
             .card {
                 background: #000;
                 display: flex;
                 flex-direction: column;
-                gap: 24px;
+                gap: 1.5rem;
                 text-align: center;
-                padding: 36px 60px 40px 60px;
+                padding: 2.25rem 3.75rem 2.5rem 3.75rem;
                 border: 1px solid #2C2C2C;
-                border-radius: 24px;
+                border-radius: 1.5rem;
                 font-weight: 500;
-                font-size: 28px;
+                font-size: 1.75rem;
                 line-height: 110%;
 
             }
@@ -35,29 +35,77 @@
             }
 
             .tail-1 {
-                height: 141px;
+                height: 8.813rem;
             }
 
             .tail-2 {
-                height: 205px;
+                height: 12.813rem;
             }
 
             .tail-3 {
-                height: 269px;
+                height: 16.813rem;
             }
         }
 
         .title {
-            padding: 64px 0;
+            padding: 4rem 0;
             font-family: 'Inter Display', sans-serif;
             font-style: normal;
             font-weight: 600;
-            font-size: 120px;
+            font-size: 7.5rem;
             line-height: 100%;
             text-transform: capitalize;
             text-align: center;
         }
 
+    }
+
+}
+
+@media (max-width: 768px) {
+    .features {
+        .container {
+
+            .cards {
+                padding: 0 2rem;
+                gap: 13.5px;
+                justify-content: center;
+
+                .card {
+                    padding: 0;
+                    width: 100px;
+                    height: 100px;
+                    margin-bottom: 2rem;
+                    font-size: 0.75rem;
+                    gap: 0;
+                    div {
+                        margin-bottom: 0.5rem;;
+                    }
+
+                    img {
+                        margin: auto;
+                        width: 50px;
+                        object-fit: contain;
+                    }
+                }
+
+                .tail-1 {
+                    height: 64px;
+                }
+
+                .tail-2 {
+                    height: 84px;
+                }
+
+                .tail-3 {
+                    height: 104px;
+                }
+            }
+
+            .title {
+                font-size: 3rem;
+            }
+        }
     }
 
 }

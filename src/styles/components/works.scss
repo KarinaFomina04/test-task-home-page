@@ -1,103 +1,236 @@
-.works {
-    height: 100vh;
+.featured-work {
 
-    .container {
-        padding: 40px 34px;
+    @media (min-width: 768px) {
+        padding: 5rem 2.5rem;
+    }
 
-        .title {
-            font-family: 'Inter Display', sans-serif;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 96px;
-            line-height: 100%;
-            padding: 64px 0;
+    &__title-main {
+        font-family: 'Inter Display', sans-serif;
+        padding: 0 1.5rem;
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 1;
+        letter-spacing: -0.06rem;
+        text-transform: capitalize;
+        margin-bottom: 1.3rem;
+        text-align: left;
+        color: #fff;
+
+        @media (min-width: 768px) {
+            padding: 0;
+            font-size: 6rem;
         }
+    }
 
-        .works-grid {
-            display: flex;
-            flex-direction: column;
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
 
-            .item {
-                display: flex;
-                justify-content: space-between;
-                border-bottom: 2px solid #222; // Замените #222 на нужный цвет
-
-                .item-description {
-                    .categories {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 40px;
-                    }
-                    .category {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1rem;
-                    }
-                    .category-title {
-                        font-family: 'Inter Display', sans-serif;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 14px;
-                        line-height: 120%;
-                        color: #727272;
-                    }
-
-                    .skill {
-                        font-family: 'Inter Display', sans-serif;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 24px;
-                        line-height: 120%;
-                    }
-
-                    > :not(.subtitle) {
-                        opacity: 0;
-                        max-height: 0;
-                        overflow: hidden;
-                        transition: opacity 0.6s, max-height 0.6s;
-                        display: flex; // Чтобы transition работал
-                    }
-
-                    .subtitle {
-                        display: block;
-                        border: 0;
-                        font-family: 'Inter Display', sans-serif;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 48px;
-                        line-height: 100%;
-                        color: #2C2C2C;
-                        &:hover {
-                            color: #FFFFFF;
-                        }
-                    }
-                }
-
-                &:hover .item-description> :not(.subtitle) {
-                    opacity: 1;
-                    max-height: 500px; // Достаточно большое значение
-                    transition: opacity 0.6s, max-height 0.6s;
-                    padding-top: 84px;
-                }
-
-                img {
-                    width: 65%;
-                    border-radius: 24px;
-                    max-height: 56px;
-                    object-fit: cover;
-                    object-position: center;
-                    transition: object-fit 2s, object-position 2s, max-height 2s;
-                }
-
-                &:hover img {
-                    max-height: 1000px;
-                    object-fit: contain;
-                    object-position: initial;
-                }
-
-                padding-bottom: 20px;
-                padding-top: 20px;
+.project-card {
+    padding: 0 1.5rem;
+    color: #fff;
+    @media (min-width: 768px) {
+        padding: 1.25rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        &:hover {
+            padding-bottom: 1.25rem;
+            .project-card__title {
+                color: #ffffff;
+            }
+            .project-card__image-wrapper {
+                max-height: 900px;
+                height: auto;
+                object-fit: contain;
+            }
+            .project-card__info-block {
+                opacity: 1;
+                height: auto;
+                overflow: hidden;
+                transition: opacity 0.5s ease, max-height 0.5s ease;
+            }
+            .project-card__body {
+                margin-top : 84px;
+            }
+            .project-card__tag {
+                margin: 8px 0 0 8px;
             }
         }
     }
+
+    .project-card__text-block {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            width: 35%;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media (min-width: 1024px) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &__content {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            width: 45%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.25rem 0 1rem 0;
+        @media (min-width: 768px) {
+            margin: 0.5rem 0 0 0;
+            display: block;
+            border: 0;
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 100%;
+            color: #2C2C2C;
+        }
+    }
+
+    &__tag {
+        background-color: #333;
+        border-radius: 999px;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        @media (min-width: 768px) {
+            line-height: 40px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            width: 140px;
+            padding: 0;
+            height: 40px;
+            max-height: 40px;
+            font-size: 1rem;
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            z-index: 2;
+        }
+    }
+
+    &__image-wrapper {
+        width: 100%;
+        overflow: hidden;
+        @media (min-width: 768px) {
+            width: 65%;
+            position: relative;
+            border-radius: 1.5rem;
+            border: none;
+            max-height: 56px;
+            height: 56px;
+            transition: max-height 2s ease;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: object-fit 2s, object-position 2s;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.25rem;
+        @media (min-width: 768px) {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    &__info-title {
+        font-size: 0.5rem;
+        font-weight: 500;
+        color: #727272;
+        margin: 1rem 0 0 0;
+        @media (min-width: 768px) {
+            font-size: 14px;
+        }
+    }
+
+    &__info-text {
+        margin: 0.5rem 0 1.25rem 0;
+        font-size: 10px;
+        font-weight: 400;
+        @media (min-width: 768px) {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+
+    &__info-block {
+        font-size: 0.625rem;
+        font-weight: 400;
+        @media(min-width: 768px) {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+        }
+
+        &-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        &-text {
+            opacity: 0.9;
+        }
+    }
 }
+
+.border-card {
+    border-top: 2px solid #222;
+
+
+    &:last-child {
+        border-bottom: 2px solid #222;
+        margin-bottom: 2.5rem;
+    }
+}
+
+
+.mobile-only {
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
+

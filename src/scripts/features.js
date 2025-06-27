@@ -32,7 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const offset = progress * maxOffset;
         cards.style.top = `${offset}px`;
         const currentIndex = offset > 200 ? 1 : 0;
+
+        let localProgress = (offset % 700) / 700;
+        console.log(localProgress);
+
+        if (currentIndex === 0) {
+            title.style.opacity = 1 - localProgress;
+        } else {
+            title.style.opacity = localProgress
+        }
+
         title.innerHTML = titles[currentIndex];
+        title.style.color = currentIndex === 0 ? '#fff' : '#00E56D';
         cards.querySelectorAll('.card').forEach((card, index) => {
             const cardData = cardSets[currentIndex][index];
             card.querySelector('img').src = cardData.img;
