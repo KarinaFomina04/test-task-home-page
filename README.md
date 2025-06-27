@@ -1,5 +1,4 @@
-# Home Page Layout — Test Task
-
+# Home Page Layout 
 This project implements the layout of a homepage based on a Figma design, following the provided technical requirements.
 
 ## 🚀 Run
